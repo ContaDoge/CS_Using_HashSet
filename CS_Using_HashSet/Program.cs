@@ -4,6 +4,75 @@ using System.Diagnostics;
 
 namespace CS_Using_HashSet
 {
+    // Answers to the question: explanations why some operations on HashSets are faster than with Lists, and some are slower.
+
+    // The answrs showcased in the documentation we were provide are as follows:
+    // For adding list are faster, for contains hashset is faster and for remove hashset is faster.
+
+    // My answers are as follows:
+    // For adding hashset are faster, for contains list is faster and for remove hashset is faster.
+
+    // Since the results are diffrent between the documentation provided and my results i am unsure if i should trust the documentation provided.
+    // The only result that is the same is the remove operation where hashset is faster.
+    // The reason why i think the results are diffrent is because the documentation provided is outdated (7 years ago)
+    // and the results are diffrent in the current version of C#.
+    
+    // The reason according to google why hashset is faster at adding operations
+    // is because it uses a hash table to store the elements and dosent have to iterate through the list to find a good location.
+
+    // The reason why list is faster at contains operations is because it uses a array to store the elements can iterate through the list to find the element.
+    // Where as hashset has to calculate the hash of the element and then find the element in the hash table.
+
+    // The reason why hashset is faster at remove operations is because it uses a hash table to store the elements
+    // and dosent have to iterate through the list to find a good location.
+
+    /*
+      ____________________________________
+List Performance while Adding Item
+
+9.244 ms
+
+Ends Here
+
+____________________________________
+HashSet Performance while Adding Item
+
+0.064 ms
+
+Ends Here
+____________________________________
+
+____________________________________
+List Performance while performing Remove item operation
+
+0.297 ms
+
+Ends Here
+
+____________________________________
+HashSet Performance while performing Remove item operation
+
+0.008 ms
+
+Ends Here
+____________________________________
+
+____________________________________
+List Performance while checking Contains operation
+
+0.005 ms
+
+Ends Here
+
+____________________________________
+HashSet Performance while checking Contains operation
+
+0.057 ms
+
+Ends Here
+____________________________________
+
+    */
     class Program
     {
         static string[] names = new string[] {
